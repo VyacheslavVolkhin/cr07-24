@@ -23,8 +23,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:image" content="/templates/en/img/logo-icon.png">
 	<link rel="shortcut icon" href="https://credits.com/templates/en/img/logo_blue.png" type="image/x-icon">
-	<link rel="preconnect" href="https://fonts.googleapis.com/">
-	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 	<link href="./index_files/css2" rel="stylesheet">
 	<link rel="stylesheet" href="./index_files/reset.css">
 
@@ -128,9 +129,15 @@
 				}
 				return false;
 			})
+			$(document).click(function (event) {
+				if (!$(event.target).closest('.submenu-inner-wrap').length) {
+					if ($(window).innerWidth() > 1023) {
+						$('.popup-menu-wrap .submenu-active').removeClass('submenu-active');
+					}
+				}
+			});
 		});
 	</script>
 	
 	
 </head>
-img/button-google-light.svg img/button-apple-light.svg img/icons/arrow-menu.svg

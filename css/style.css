@@ -78,6 +78,10 @@
   width: 27.6%;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  transition: all ease 0.2s;
+}
+.popup-menu-wrap .menu-wrap:hover {
+  background: #F8F8F8;
 }
 .popup-menu-wrap .menu-main {
   width: 44.8%;
@@ -699,11 +703,17 @@
 }
 .main-top-box.section-payment-methods .h3-title,
 .main-top-box.section-payment-methods .h2-title {
-  max-width: 8.75em;
+  max-width: 10em;
+}
+.main-top-box.section-payment-methods p {
+  margin-bottom: 12px;
 }
 .main-top-box.section-payment-methods .photo-inner-wrap {
   max-width: 896px;
   max-width: 56rem;
+}
+.main-top-box.section-payment-methods .btn.button-large {
+  margin-top: 12px;
 }
 .main-top-box.section-photos .photo-inner-wrap {
   max-width: 892.8px;
@@ -719,10 +729,24 @@
   margin: 0;
   width: 50%;
 }
+.main-top-box.section-photos .item-wrap.wrap-main {
+  width: 100%;
+}
+.main-top-box.section-photos .item-wrap.wrap-main .elm-photo {
+  border-radius: 0;
+}
 .main-top-box.section-photos .elm-photo {
   border-radius: 3.5rem;
   width: 100%;
   max-width: inherit;
+}
+.main-top-box.section-photos .h2-title,
+.main-top-box.section-photos .h3-title {
+  margin-bottom: 12px;
+}
+.main-top-box.section-photos ul,
+.main-top-box.section-photos p {
+  margin-bottom: 12px;
 }
 .main-more-wrap {
   text-align: center;
@@ -811,11 +835,31 @@
   .main-top-box.section-payment-methods .h2-title {
     margin-left: 0;
   }
+  .main-top-box.section-iban-interest .info-inner-wrap,
+  .main-top-box.section-photos .info-inner-wrap,
+  .main-top-box.section-payment-methods .info-inner-wrap {
+    padding-right: 4rem;
+  }
+  .main-top-box.section-payment-methods .info-inner-wrap {
+    padding-right: 0;
+  }
+  .main-top-box.section-payment-methods .photo-inner-wrap .elm-photo {
+    max-width: 56rem;
+    margin: 0;
+  }
   .main-top-box.section-photos .info-inner-wrap {
     max-width: calc(100% - 55.5rem);
   }
   .main-top-box.section-photos .photo-inner-wrap {
     width: 50%;
+  }
+}
+@media (min-width: 640px) and (max-width: 767px) {
+  .main-top-box.section-photos .photo-inner-wrap {
+    max-width: 45rem;
+  }
+  .main-top-box.section-photos .info-inner-wrap {
+    max-width: calc(100% - 45rem);
   }
 }
 @media (min-width: 640px) and (max-width: 1023px) {
@@ -839,6 +883,9 @@
   }
   .main-top-box.section-payment-methods .inner-wrap {
     min-height: 72rem;
+  }
+  .main-top-box.section-payment-methods .photo-inner-wrap {
+    width: 56rem;
   }
   .main-top-box.section-payment-methods .btn.button-large {
     height: 56px;
@@ -868,13 +915,13 @@
     border-radius: 12px;
   }
 }
-@media (min-width: 1024px) and (max-width: 1199px) {
+@media (min-width: 1024px) and (max-width: 1139px) {
   .main-top-box.section-payment-methods .info-inner-wrap {
-    max-width: calc(100% - 50rem);
+    max-width: calc(100% - 45rem);
   }
   .main-top-box.section-payment-methods .photo-inner-wrap {
-    width: 50%;
-    max-width: 50rem;
+    width: 45rem;
+    max-width: 45rem;
   }
 }
 @media (min-width: 1400px) {
@@ -893,6 +940,7 @@
   }
   .main-top-box.section-payment-methods .photo-inner-wrap {
     width: 62rem;
+    max-width: 62rem;
   }
   .main-top-box.section-payment-methods .info-inner-wrap {
     max-width: calc(100% - 62rem);

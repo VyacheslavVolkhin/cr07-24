@@ -25,8 +25,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="/templates/en/img/logo-icon.png">
     <link rel="shortcut icon" href="https://credits.com/templates/en/img/logo_blue.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
     <link href="./index_files/css2" rel="stylesheet">
     <link rel="stylesheet" href="./index_files/reset.css">
 
@@ -130,12 +131,18 @@
                 }
                 return false;
             })
+            $(document).click(function(event) {
+                if (!$(event.target).closest('.submenu-inner-wrap').length) {
+                    if ($(window).innerWidth() > 1023) {
+                        $('.popup-menu-wrap .submenu-active').removeClass('submenu-active');
+                    }
+                }
+            });
         });
     </script>
 
 
 </head>
-img/button-google-light.svg img/button-apple-light.svg img/icons/arrow-menu.svg
 
 <body>
     <!-- wrap -->
@@ -245,7 +252,7 @@ img/button-google-light.svg img/button-apple-light.svg img/icons/arrow-menu.svg
                                                 <li><a href="">Interest account</a></li>
                                             </ul>
                                         </div>
-                                        <div class="menu-wrap menu-att">
+                                        <div class="menu-wrap">
                                             <div class="menu-title">Help & Security</div>
                                             <ul class="submenu">
                                                 <li><a href="">Support</a></li>
@@ -286,7 +293,7 @@ img/button-google-light.svg img/button-apple-light.svg img/icons/arrow-menu.svg
                                                 <li><a href="">Interest account</a></li>
                                             </ul>
                                         </div>
-                                        <div class="menu-wrap menu-att">
+                                        <div class="menu-wrap">
                                             <div class="menu-title">Help & Security</div>
                                             <ul class="submenu">
                                                 <li><a href="">Support</a></li>
@@ -330,7 +337,7 @@ img/button-google-light.svg img/button-apple-light.svg img/icons/arrow-menu.svg
             <div class="inner-wrap">
                 <div class="info-inner-wrap">
                     <div class="title-wrap text-body">
-                        <h1 class="h3-title">Crypto for business.</h1>
+                        <h1 class="h2-title">Crypto for business.</h1>
                         <ul class="list-marker">
                             <li>Payment options: SEPA, SWIFT.</li>
                             <li>Best market prices</li>
@@ -341,24 +348,9 @@ img/button-google-light.svg img/button-apple-light.svg img/icons/arrow-menu.svg
                 </div>
                 <div class="photo-inner-wrap">
                     <div class="items-wrap">
-                        <div class="item-wrap">
-                            <a href="./img/01.jpg" class="elm-photo photo-cover" data-swipebox="gal">
-                                <img src="./img/01.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="item-wrap">
-                            <a href="./img/02.jpg" class="elm-photo photo-cover" data-swipebox="gal">
-                                <img src="./img/02.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="item-wrap">
-                            <a href="./img/03.jpg" class="elm-photo photo-cover" data-swipebox="gal">
-                                <img src="./img/03.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="item-wrap">
-                            <a href="./img/04.jpg" class="elm-photo photo-cover" data-swipebox="gal">
-                                <img src="./img/04.jpg" alt="">
+                        <div class="item-wrap wrap-main">
+                            <a href="./img/main.png" class="elm-photo photo-cover" data-swipebox="gal">
+                                <img src="./img/main.png" alt="">
                             </a>
                         </div>
                     </div>
@@ -449,7 +441,7 @@ img/button-google-light.svg img/button-apple-light.svg img/icons/arrow-menu.svg
             <div class="inner-wrap">
                 <div class="info-inner-wrap">
                     <div class="title-wrap text-body">
-                        <h2 class="h2-title">Payment methods for crypto for businesses.</h2>
+                        <h2 class="h3-title">Payment methods for crypto for businesses.</h2>
                         <p>Fast SEPA & SWIFT Payment options</p>
                         <p>
                             <a href="" class="btn button-pay">SEPA</a>

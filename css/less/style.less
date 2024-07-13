@@ -83,6 +83,10 @@
 		flex-shrink: 0;
 		width: 27.6%;
 		flex-shrink: 0;
+		transition: all ease 0.2s;
+		&:hover {
+			background: #F8F8F8;
+		}
 	}
 	.menu-main {
 		width: 44.8%;
@@ -663,10 +667,16 @@
 			}
 		}
 		.h3-title, .h2-title {
-			max-width: (560/64em);
+			max-width: (560/56em);
+		}
+		p {
+			margin-bottom: 12px;
 		}
 		.photo-inner-wrap {
 			max-width: 56rem;
+		}
+		.btn.button-large {
+			margin-top: 12px;
 		}
 	}
 	&.section-photos {
@@ -680,11 +690,23 @@
 			padding: 0 0.9rem;
 			margin: 0;
 			width: 50%;
+			&.wrap-main {
+				width: 100%;
+				.elm-photo {
+					border-radius: 0;
+				}
+			}
 		}
 		.elm-photo {
 			border-radius: 3.5rem;
 			width: 100%;
 			max-width: inherit;
+		}
+		.h2-title, .h3-title {
+			margin-bottom: 12px;
+		}
+		ul, p {
+			margin-bottom: 12px;
 		}
 	}
 }
@@ -763,6 +785,20 @@
 			.h3-title, .h2-title {
 				margin-left: 0;
 			}
+			.info-inner-wrap {
+				padding-right: 4rem;
+			}
+		}
+		&.section-payment-methods {
+			.info-inner-wrap {
+				padding-right: 0;
+			}
+			.photo-inner-wrap {
+				.elm-photo {
+					max-width: 56rem;
+					margin: 0;
+				}
+			}
 		}
 		&.section-photos {
 			.info-inner-wrap {
@@ -772,6 +808,14 @@
 				width: 50%;
 			}
 		}
+	}
+}
+@media (min-width: 640px) and (max-width: 767px) {
+	.main-top-box.section-photos .photo-inner-wrap {
+		max-width: 45rem;
+	}
+	.main-top-box.section-photos .info-inner-wrap {
+		max-width: calc(100% - 45rem);
 	}
 }
 @media (min-width: 640px) and (max-width: 1023px) {
@@ -801,6 +845,9 @@
 		&.section-payment-methods {
 			.inner-wrap {
 				min-height: 72rem;
+			}
+			.photo-inner-wrap {
+				width: 56rem;
 			}
 			.btn.button-large {
 				height: 56px;
@@ -841,15 +888,15 @@
 		}
 	}
 }
-@media (min-width: 1024px) and (max-width: 1199px) {
+@media (min-width: 1024px) and (max-width: 1139px) {
 	.main-top-box {
 		&.section-payment-methods {
 			.info-inner-wrap {
-				max-width: calc(100% - 50rem);
+				max-width: calc(100% - 45rem);
 			}
 			.photo-inner-wrap {
-				width: 50%;
-				max-width: 50rem;
+				width: 45rem;
+				max-width: 45rem;
 			}
 		}
 	}
@@ -878,6 +925,7 @@
 		&.section-payment-methods {
 			.photo-inner-wrap {
 				width: 62rem;
+				max-width: 62rem;
 			}
 			.info-inner-wrap {
 				max-width: calc(100% - 62rem);
