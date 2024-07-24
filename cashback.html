@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Credits.com</title>
+    <meta name="charset" content="utf-8">
+    <meta name="title" content="Credits.com">
+    <meta name="description" content="Use Credits wallet for banking and crypto.">
+    <meta name="keywords" content="Credits.com">
+    <link rel="canonical" href="https://credits.com/">
+    <link rel="alternate" type="application/rss+xml" title="Credits.com" href="https://credits.com/rss.xml">
+    <link rel="search" type="application/opensearchdescription+xml" title="Credits.com" href="https://credits.com/index.php?do=opensearch">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Credits.com">
+    <meta property="twitter:description" content="Use Credits wallet for banking and crypto.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Credits.com">
+    <meta property="og:title" content="Credits.com">
+    <meta property="og:description" content="Use Credits wallet for banking and crypto.">
+    <link href="./index_files/index.php" rel="stylesheet" type="text/css">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="/templates/en/img/logo-icon.png">
+    <link rel="shortcut icon" href="https://credits.com/templates/en/img/logo_blue.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="./index_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./index_files/reset.css">
+
+    <script src="https://credits.com/templates/en/js/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            //popup block
+            $('.js-popup-wrap .js-btn-toggle').on('click', function() {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $('body').removeClass('menu-show');
+                    $('.js-popup-wrap').removeClass('popup-right');
+                } else {
+                    $('.js-popup-wrap:not(.no-close) .js-btn-toggle').removeClass('active');
+                    $(this).addClass('active');
+                    if ($(this).parent().hasClass('main-menu-wrap')) {
+                        $('body').addClass('menu-show');
+                    }
+                    pLeft = $(this).parent('.js-popup-wrap').find('.js-popup-block').offset().left;
+                    pWidth = $(this).parent('.js-popup-wrap').find('.js-popup-block').outerWidth();
+                    pMax = pLeft + pWidth;
+                    if (pMax > $('.wrap').width()) {
+                        $(this).parent('.js-popup-wrap').addClass('popup-right');
+                    } else {
+                        $('.js-popup-wrap').removeClass('popup-right');
+                    }
+                }
+                return false;
+            })
+            $('.js-popup-wrap .js-btn-close').on('click', function() {
+                $(this).parents('.js-popup-wrap').children('.js-btn-toggle').removeClass('active');
+                $('.js-popup-wrap').removeClass('popup-right');
+                $('body').removeClass('menu-show');
+                return false;
+            })
+            $(document).click(function(event) {
+                if ($(event.target).closest(".js-popup-block").length) return;
+                $('.js-popup-wrap:not(.no-close) .js-btn-toggle').removeClass('active');
+                $('.js-popup-wrap').removeClass('popup-right');
+                $('body').removeClass('menu-show');
+                event.stopPropagation();
+            });
+            $('.js-popup-wrap').each(function() {
+                if ($(this).hasClass('js-popup-select')) {
+                    if ($(this).find('.js-popup-block').find('.active').length > 0) {
+                        $(this).find('.js-btn-toggle').addClass('selected');
+                        var currentSelect = $(this).find('.js-popup-block').find('.active').html();
+                        $(this).find('.js-btn-toggle').children('.button-title').html(currentSelect);
+                    } else {
+                        $(this).find('.js-btn-toggle').removeClass('selected');
+                    }
+                }
+            })
+            $('.js-popup-wrap.js-popup-select .js-popup-block a').on('click', function() {
+                if ($(this).hasClass('active')) {} else {
+                    $(this).parents('.js-popup-wrap').find('.js-popup-block').find('.active').removeClass('active');
+                    $(this).addClass('active');
+                    $('.js-tab-block').removeClass('active');
+                    $('.js-tabs-nav').each(function() {
+                        $('.js-tab-block[data-tab*="' + $(this).find('.js-popup-block').find('.active').attr('data-tab') + '"]').addClass('active');
+                    })
+                }
+                $('.js-popup-wrap').each(function() {
+                    if ($(this).hasClass('js-popup-select')) {
+                        if ($(this).find('.js-popup-block').find('.active').length > 0) {
+                            $(this).find('.js-btn-toggle').addClass('selected');
+                            var currentSelect = $(this).find('.js-popup-block').find('.active').html();
+                            //$(this).find('.js-btn-toggle').children('.button-title').html(currentSelect);
+                            $(this).find('.js-btn-toggle').children('.button-title').val(currentSelect);
+                        } else {
+                            $(this).find('.js-btn-toggle').removeClass('selected');
+                        }
+                    }
+                })
+                $(this).parents('.js-popup-wrap').find('.js-btn-toggle').removeClass('active');
+                return false;
+            })
+        });
+    </script>
+
+
+    <link rel="stylesheet" href="./index_files/style.min.css">
+    <link rel="stylesheet" href="./index_files/fix.css">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+        $(document).ready(function() {
+
+            //header menu
+            $('.popup-menu-wrap .btn-submenu').on('click', function() {
+                if ($(this).hasClass('submenu-active')) {
+                    $(this).removeClass('submenu-active');
+                } else {
+                    if ($(window).innerWidth() > 1023) {
+                        $('.popup-menu-wrap .btn-submenu.submenu-active').removeClass('submenu-active');
+                    }
+                    $(this).addClass('submenu-active')
+                }
+                return false;
+            })
+            $(document).click(function(event) {
+                if (!$(event.target).closest('.submenu-inner-wrap').length) {
+                    if ($(window).innerWidth() > 1023) {
+                        $('.popup-menu-wrap .submenu-active').removeClass('submenu-active');
+                    }
+                }
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <!-- wrap -->
+    <div class="wrap wrap-inner wrap-main">
+
+        <!-- header -->
+        <header class="header header-new">
+            <div class="inner-wrap">
+                <div class="logo-wrap">
+                    <a href="https://credits.com/ru/" class="logo">
+
+                        <img src="./index_files/logo.svg" alt="">
+
+
+
+                    </a>
+                </div>
+
+                <div class="actions-wrap">
+
+                    <div class="action-wrap">
+                        <a href="https://credits.com/go.html" target="_blank" class="btn">Access your account</a>
+                    </div>
+
+
+
+                    <div class="popup-lang-wrap action-wrap js-popup-wrap">
+                        <a href="https://credits.com/ru/" class="btn-popup js-btn-toggle">Ru</a>
+                        <div class="popup-content-block js-popup-block">
+                            <ul class="menu">
+                                <li>
+                                    <a href="https://credits.com/ru/" class="btn-lang active">
+                                        <span class="button-ico">
+                                            <img src="./index_files/ru.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Русский</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/en/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/gb.svg" alt="">
+                                        </span>
+                                        <span class="button-title">English</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/ua/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/ua.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Українська</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/tr/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/tr.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Türkçe</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/sp/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/es.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Español</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/de/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/de.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Deutsch</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popup-menu-wrap js-popup-wrap">
+                    <a href="https://credits.com/ru/" class="btn-popup btn-action-ico ico-menu js-btn-toggle"></a>
+                    <div class="popup-content-block js-popup-block">
+                        <a href="" class="btn-popup-close btn-action-ico ico-close js-btn-close"></a>
+                        <ul class="menu">
+                            <li>
+                                <a href="" class="btn-submenu">Personal</a>
+                                <div class="submenu-inner-wrap">
+                                    <div class="menu-inner-wrap">
+                                        <div class="menu-wrap menu-main">
+                                            <div class="menu-title">Personal products</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Debit card</a></li>
+                                                <li><a href="">IBAN euro</a></li>
+                                                <li><a href="">Transfers</a></li>
+                                                <li><a href="">Apple, Google Pay</a></li>
+                                                <li><a href="">Payments</a></li>
+                                                <li><a href="">Cashback</a></li>
+                                                <li><a href="">Invite a friend</a></li>
+                                                <li><a href="">Get $10 bonus</a></li>
+                                                <li><a href="">Crypto wallets</a></li>
+                                                <li><a href="">Buy crypto</a></li>
+                                                <li><a href="">Top up, withdrawal</a></li>
+                                                <li><a href="">Interest account</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-wrap">
+                                            <div class="menu-title">Help & Security</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Support</a></li>
+                                                <li><a href="">FAQ</a></li>
+                                                <li><a href="">Contact</a></li>
+                                                <li><a href="">Online chat</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-wrap">
+                                            <div class="menu-title">Plans for individuals</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Standard</a></li>
+                                                <li><a href="">Premium</a></li>
+                                                <li><a href="">Compare plans</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="" class="btn-submenu">Business</a>
+                                <div class="submenu-inner-wrap">
+                                    <div class="menu-inner-wrap">
+                                        <div class="menu-wrap menu-main">
+                                            <div class="menu-title">Personal products</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Debit card</a></li>
+                                                <li><a href="">IBAN euro</a></li>
+                                                <li><a href="">Transfers</a></li>
+                                                <li><a href="">Apple, Google Pay</a></li>
+                                                <li><a href="">Payments</a></li>
+                                                <li><a href="">Cashback</a></li>
+                                                <li><a href="">Invite a friend</a></li>
+                                                <li><a href="">Get $10 bonus</a></li>
+                                                <li><a href="">Crypto wallets</a></li>
+                                                <li><a href="">Buy crypto</a></li>
+                                                <li><a href="">Top up, withdrawal</a></li>
+                                                <li><a href="">Interest account</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-wrap">
+                                            <div class="menu-title">Help & Security</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Support</a></li>
+                                                <li><a href="">FAQ</a></li>
+                                                <li><a href="">Contact</a></li>
+                                                <li><a href="">Online chat</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-wrap">
+                                            <div class="menu-title">Plans for individuals</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Standard</a></li>
+                                                <li><a href="">Premium</a></li>
+                                                <li><a href="">Compare plans</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="">Manage finances</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Support</a></li>
+                        </ul>
+                        <div class="actions-wrap">
+                            <div class="action-wrap action-login">
+                                <a href="https://credits.com/go.html" target="_blank" class="link-color">Войти</a>
+                            </div>
+                            <div class="action-wrap">
+                                <a href="https://credits.com/go.html" target="_blank" class="btn">Access your account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+        <!-- /header -->
+
+        <!--main-top-box-->
+        <div class="main-top-box cnt-section section-iban screen-small photo-full bg-dark bg-gradient-after">
+            <div class="inner-wrap wrap-1184 pt-mediumPadding pb-mediumPadding">
+                <div class="info-inner-wrap">
+                    <div class="title-wrap text-body text-dark lh-15 mb-24 w-400">
+                        <h1 class="h2-title mb-24">Get Cashback</h1>
+                        <p>Use Credits debit card for every day spendings and get cashback.</p>
+                    </div>
+                    <div class="main-actions-qr-wrap">
+                        <div class="action-button">
+                            <a href="" class="btn">Get started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-inner-wrap">
+                    <div class="elm-photo">
+                        <img src="./img/cash01.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/main-top-box-->
+
+        <!--main-top-box-->
+        <div class="main-top-box cnt-section section-iban screen-small photo-full bg-dark bg-gradient-after section-reverse">
+            <div class="inner-wrap wrap-1184 pt-mediumPadding pb-mediumPadding">
+                <div class="info-inner-wrap">
+                    <div class="title-wrap text-body text-dark lh-15 mb-24 w-400">
+                        <h1 class="h3-title mb-24">Cash back for everyday payments.</h1>
+                        <ul class="list-marker">
+                            <li>Internal on-off ramp (no third parties).</li>
+                            <li>Low fees: only 2.5% for VISA/Mastercard.</li>
+                            <li>0% fee for external bank top-ups.</li>
+                        </ul>
+                    </div>
+                    <div class="main-actions-qr-wrap">
+                        <div class="action-button">
+                            <a href="" class="btn">Get started</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="photo-inner-wrap">
+                    <div class="elm-photo">
+                        <img src="./img/cash02.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/main-top-box-->
+
+        <!--main-section-plan-box-->
+        <div class="main-section-plan-box cnt-section bg-dark">
+            <div class="inner-wrap">
+                <div class="main-title-wrap mb-32">
+                    <h2 class="h4-title">Credits cashback</h2>
+                </div>
+                <div class="box-inner-wrap">
+                    <div class="tabs-inner-wrap">
+                        <ul class="menu">
+                            <li><a href="" class="active" onclick="this.closest('.main-section-plan-box').classList.remove('premium-active');this.closest('.menu').querySelector('.active').classList.remove('active');this.classList.add('active');return false;">Standard</a>
+                            </li>
+                            <li><a href="" onclick="this.closest('.main-section-plan-box').classList.add('premium-active');this.closest('.menu').querySelector('.active').classList.remove('active');this.classList.add('active');return false;" "="">Premium</a></li>
+							</ul>
+						</div>
+						<div class=" items-inner-wrap">
+                                    <div class="items-wrap">
+                                        <!--item wrap-->
+                                        <div class="item-wrap wrap-standart">
+                                            <div class="item-tile-plan tile-second">
+                                                <div class="tile-title-wrap">
+                                                    <div class="tile-title">Standard </div>
+                                                    <div class="tile-subtitle"><span class="tile-price-att">0.5%</span> cashback</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/item wrap-->
+                                        <!--item wrap-->
+                                        <div class="item-wrap wrap-premium">
+                                            <div class="item-tile-plan tile-second">
+                                                <div class="tile-title-wrap">
+                                                    <div class="tile-title">Premium </div>
+                                                    <div class="tile-subtitle"><span class="tile-price-att">1%</span> cashback</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--/item wrap-->
+                                    </div>
+                    </div>
+                    <div class="tbl-outer-wrap">
+                        <div class="tbl-inner-wrap">
+                            <table>
+                                <colgroup>
+                                    <col class="col01">
+                                    <col class="col02">
+                                    <col class="col03">
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <td>Mastercard monthly spending over €500 /month</td>
+                                        <td>max&nbsp;€5.0/month</td>
+                                        <td>max&nbsp;€5.0/month</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Buying/selling cryptocurrency to fiat</td>
+                                        <td>max&nbsp;€10.0/month</td>
+                                        <td>max&nbsp;€10.0/month</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="more-wrap">
+                        <a href="" class="btn button-border">Compare all fees and limits</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/main-section-plan-box-->
+
+
+
+    </div>
+    <!-- /wrap -->
+
+
+
+</body>
+
+</html>
