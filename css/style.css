@@ -177,6 +177,9 @@
   display: -ms-flexbox;
   display: flex;
 }
+.popup-menu-wrap .menu-inner-wrap:not(:hover) .menu-att {
+  background-color: #f8f8f8;
+}
 .popup-menu-wrap .menu-wrap {
   padding: 51.2px 51.2px 35.2px 51.2px;
   padding: 3.2rem 3.2rem 2.2rem 3.2rem;
@@ -200,9 +203,6 @@
 }
 .popup-menu-wrap .btn-submenu.submenu-active ~ .submenu-inner-wrap {
   display: block;
-}
-.popup-menu-wrap .menu-att {
-  background: #F8F8F8;
 }
 .popup-menu-wrap .submenu-inner-wrap {
   animation: fadein ease 0.2s;
@@ -927,6 +927,34 @@
 }
 /* end items styles */
 /* content styles 2222 */
+.main-questions-box.bg-dark {
+  color: #fff;
+}
+.main-questions-box.bg-dark .item-tile-question {
+  color: #fff;
+}
+.main-questions-box.bg-dark .item-tile-question .btn-popup {
+  color: #fff;
+}
+.main-questions-box.bg-dark .item-tile-question .btn-popup:before {
+  filter: brightness(0) invert(1);
+}
+.main-apps-info-box.bg-dark .box-inner-wrap {
+  background-color: #313133;
+}
+.main-apps-info-box.bg-dark .action-title {
+  color: #fff;
+}
+.main-apps-info-box.bg-dark .action-qr:before,
+.main-apps-info-box.bg-dark .action-qr:after {
+  background-color: #DDDFE3;
+}
+.main-apps-info-box.bg-dark .btn-action-qr {
+  background-color: transparent;
+}
+.main-apps-info-box.bg-dark .btn-action-more {
+  text-align: left;
+}
 .help-menu-box {
   background: #000 url(../img/help.jpg) center / cover no-repeat;
   text-align: center;
@@ -1423,6 +1451,7 @@
 }
 .main-top-box .inner-text-light {
   color: #575759;
+  font-weight: 500;
 }
 .main-top-box .info-text-wrap {
   display: block;
