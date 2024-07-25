@@ -173,11 +173,6 @@
 		margin: 0 auto;
 		max-width: 1138px;
 		display: flex;
-		&:not(:hover) {
-			.menu-att {
-				background-color: #f8f8f8;
-			}
-		}
 	}
 	.menu-wrap {
 		padding: 3.2rem 3.2rem 2.2rem 3.2rem;
@@ -187,6 +182,12 @@
 		transition: all ease 0.2s;
 		&:hover {
 			background: #F8F8F8;
+		}
+		&.menu-att {
+			background-color: #f8f8f8;
+			&:hover {
+				background-color: #fbfbfb;
+			}
 		}
 	}
 	.menu-main {

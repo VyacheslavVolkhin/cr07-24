@@ -177,9 +177,6 @@
   display: -ms-flexbox;
   display: flex;
 }
-.popup-menu-wrap .menu-inner-wrap:not(:hover) .menu-att {
-  background-color: #f8f8f8;
-}
 .popup-menu-wrap .menu-wrap {
   padding: 51.2px 51.2px 35.2px 51.2px;
   padding: 3.2rem 3.2rem 2.2rem 3.2rem;
@@ -190,6 +187,12 @@
 }
 .popup-menu-wrap .menu-wrap:hover {
   background: #F8F8F8;
+}
+.popup-menu-wrap .menu-wrap.menu-att {
+  background-color: #f8f8f8;
+}
+.popup-menu-wrap .menu-wrap.menu-att:hover {
+  background-color: #fbfbfb;
 }
 .popup-menu-wrap .menu-main {
   width: 44.8%;
