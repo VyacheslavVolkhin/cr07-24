@@ -117,6 +117,25 @@
 .inner-wrap.wrap-1117 {
 	max-width: calc(1117px + var(--paddingContainer) + var(--paddingContainer)) !important;
 }
+.button-page-chat {
+	z-index: 110;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	display: block;
+	width: 40px;height: 40px;
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: -10px;
+		bottom: -10px;
+		left: -10px;
+		right: -10px;
+		background: url(../img/wa.webp) center no-repeat;
+		background-size: 100% auto;
+	}
+}
 .header.header-new {
 	.inner-wrap {
 		max-width: 1300px;
