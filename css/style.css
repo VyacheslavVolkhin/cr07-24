@@ -129,11 +129,11 @@
 .button-page-chat {
   z-index: 110;
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 54px;
+  right: 28px;
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
 }
 .button-page-chat:before {
   content: "";
@@ -145,6 +145,7 @@
   right: -10px;
   background: url(../img/wa.webp) center no-repeat;
   background-size: 100% auto;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
 }
 .header.header-new .inner-wrap {
   max-width: 1300px;
