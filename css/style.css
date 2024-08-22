@@ -135,6 +135,7 @@
   width: 60px;
   height: 60px;
   overflow: visible;
+  outline: none;
 }
 .button-page-chat:before {
   content: "";
@@ -148,6 +149,7 @@
   background: url(../img/wa.webp) center no-repeat;
   background-size: 100% auto;
   filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
+  outline: none;
 }
 .header.header-new .inner-wrap {
   max-width: 1300px;
