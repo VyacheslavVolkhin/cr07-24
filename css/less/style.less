@@ -24,6 +24,20 @@
 :root {
 	--medium-padding: 8rem;
 }
+.section-1320 {
+	max-width: 1320px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.btn {
+	&.button-vlarge {
+		height: 6.6rem;
+		border-radius: 1.5rem;
+		min-width: 31.6rem;
+		font-size: 2.5rem;
+		font-weight: 500;
+	}
+}
 .mb-0 {
 	margin-bottom: 0 !important;
 }
@@ -53,6 +67,9 @@
 }
 .mt-44 {
 	margin-top: 4.4rem !important;
+}
+.mt-60 {
+	margin-top: 6rem !important;
 }
 .text-dark {
 	color: var(--clr-base-dark);
@@ -1991,3 +2008,221 @@
 	}
 }
 /* end content styles */
+/* add 09.2024 */
+
+.pagenav-box {
+	.pages-wrap {
+		max-width: calc(100% - 12rem);
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.btn-page {
+		margin-bottom: 3px;
+	}
+}
+.news-box {
+	.main-action-wrap {
+		text-align: center;
+	}
+	&.section-second {
+		margin-bottom: 12rem;
+		.title-header-wrap {
+			margin-bottom: 5rem;
+		}
+		.pagenav-box {
+			padding-top: 4.5rem;
+		}
+		.items-wrap {
+			margin-bottom: -5rem;
+		}
+		.item-wrap {
+			margin-bottom: 5rem;
+		}
+		.item-tile-new {
+			border-radius: 2.4rem;
+			border: 1px solid fade(#000, 10);
+			box-shadow: none;
+			&:hover {
+				border-color: fade(#000, 30);
+			}
+			&:not(.tile-main) {
+				.tile-info-wrap {
+					padding-bottom: 12px;
+					display: flex;
+					flex-direction: column;
+					padding-top: 2.4rem;
+					flex: 1;
+				}
+				.tile-photo {
+					&:before {
+						padding-top: 75.3%;
+					}
+				}
+				.tile-title {
+					min-height: 0;
+					margin-top: 5px;
+					font-weight: 700;
+					font-size: 2.8rem;
+					line-height: 1.14286;
+					color: #232323;
+					padding-bottom: 0;
+					margin-bottom: 0.3em;
+					width: 100%;
+					flex: 1;
+				}
+				.tile-date {
+					color: rgba(0, 0, 0, 0.2);
+					font-size: 14px;
+					line-height: 1.4;
+				}
+			}
+		}
+	}
+	&.section-lead {
+		.item-wrap {
+				width: 100%;
+				padding: 0;
+				margin-bottom: 16px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			.items-wrap {
+				margin: 0;
+			}
+		.title-header-wrap {
+			margin-bottom: 2.4rem;
+			.h1-title {
+				font-size: 2.8rem;
+				font-weight: bold;
+				line-height: 1.14286;
+				color: #232323;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.list-inner-wrap {
+			.item-tile-new {
+				display: flex;
+				flex-direction: row;
+				align-items: stretch;
+				min-height: 70px;
+				border: none;
+				padding: 3px 0;
+				&:hover {
+					.tile-date {
+						color: #232323;
+					}
+				}
+				.tile-info-wrap {
+					display: block;
+					flex: 1;
+					padding: 0 0 0 12px;
+					max-width: calc(100% - 128px);
+				}
+				.tile-photo-wrap {
+					width: 128px;
+					flex-shrink: 0;
+					padding: 0;
+					margin: 0;
+					position: relative;
+					min-height: 100%;
+					.tile-photo {
+						border-radius: 15px;
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						aspect-ratio: inherit;
+						&:before {
+							display: none;
+						}
+					}
+				}
+				.tile-title {
+					font-size: 16px;
+					line-height: 1.25;
+					margin: 0 0 8px 0;
+					padding: 0;
+					min-height: 0;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+				.tile-date {
+					margin: 0;
+					padding: 0;
+					transition: all ease 0.2s;
+				}
+			}
+		}
+	}
+	.lead-inner-wrap {
+		margin-bottom: 6rem;
+	}
+}
+@media (min-width: 768px) {
+	.news-box {
+		&.section-lead {
+			.box-inner-wrap {
+				display: flex;
+			}
+			.lead-inner-wrap {
+				flex: 1;
+				padding: 0 4.8rem 0 0;
+				margin-bottom: 0;
+				.item-tile-new {
+					display: flex;
+					min-height: 100%;
+					.tile-info-wrap {
+						display: block;
+						width: 100%;
+						flex: 0 0 auto;
+						padding: 2.4rem;
+						.tile-date {
+							position: absolute;
+							top: 2.4rem;right: 2.4rem;
+							left: auto;
+							width: auto;
+							float: left;
+						}
+					}
+					.tile-photo-wrap {
+						width: 100%;
+						flex: 1;
+						position: relative;
+						.tile-photo {
+							aspect-ratio: inherit;
+							position: absolute;
+							top: 0;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							&:before {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+			.list-inner-wrap {
+				width: 51.2rem;
+				flex-shrink: 0;
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+}
+@media (min-width: 1400px) {
+	.page-full {
+		.section-1320 {
+			max-width: inherit;
+			margin-left: -40px;
+			margin-right: -40px;
+		}
+	}
+}
+/* end add 09.2024 */

@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Credits.com</title>
+    <meta name="charset" content="utf-8">
+    <meta name="title" content="Credits.com">
+    <meta name="description" content="Use Credits wallet for banking and crypto.">
+    <meta name="keywords" content="Credits.com">
+    <link rel="canonical" href="https://credits.com/">
+    <link rel="alternate" type="application/rss+xml" title="Credits.com" href="https://credits.com/rss.xml">
+    <link rel="search" type="application/opensearchdescription+xml" title="Credits.com" href="https://credits.com/index.php?do=opensearch">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="Credits.com">
+    <meta property="twitter:description" content="Use Credits wallet for banking and crypto.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Credits.com">
+    <meta property="og:title" content="Credits.com">
+    <meta property="og:description" content="Use Credits wallet for banking and crypto.">
+    <link href="./index_files/index.php" rel="stylesheet" type="text/css">
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="/templates/en/img/logo-icon.png">
+    <link rel="shortcut icon" href="https://credits.com/templates/en/img/logo_blue.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <link href="./index_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./index_files/reset.css">
+
+    <script src="https://credits.com/templates/en/js/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            //popup block
+            $('.js-popup-wrap .js-btn-toggle').on('click', function() {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $('body').removeClass('menu-show');
+                    $('.js-popup-wrap').removeClass('popup-right');
+                } else {
+                    $('.js-popup-wrap:not(.no-close) .js-btn-toggle').removeClass('active');
+                    $(this).addClass('active');
+                    if ($(this).parent().hasClass('main-menu-wrap')) {
+                        $('body').addClass('menu-show');
+                    }
+                    pLeft = $(this).parent('.js-popup-wrap').find('.js-popup-block').offset().left;
+                    pWidth = $(this).parent('.js-popup-wrap').find('.js-popup-block').outerWidth();
+                    pMax = pLeft + pWidth;
+                    if (pMax > $('.wrap').width()) {
+                        $(this).parent('.js-popup-wrap').addClass('popup-right');
+                    } else {
+                        $('.js-popup-wrap').removeClass('popup-right');
+                    }
+                }
+                return false;
+            })
+            $('.js-popup-wrap .js-btn-close').on('click', function() {
+                $(this).parents('.js-popup-wrap').children('.js-btn-toggle').removeClass('active');
+                $('.js-popup-wrap').removeClass('popup-right');
+                $('body').removeClass('menu-show');
+                return false;
+            })
+            $(document).click(function(event) {
+                if ($(event.target).closest(".js-popup-block").length) return;
+                $('.js-popup-wrap:not(.no-close) .js-btn-toggle').removeClass('active');
+                $('.js-popup-wrap').removeClass('popup-right');
+                $('body').removeClass('menu-show');
+                event.stopPropagation();
+            });
+            $('.js-popup-wrap').each(function() {
+                if ($(this).hasClass('js-popup-select')) {
+                    if ($(this).find('.js-popup-block').find('.active').length > 0) {
+                        $(this).find('.js-btn-toggle').addClass('selected');
+                        var currentSelect = $(this).find('.js-popup-block').find('.active').html();
+                        $(this).find('.js-btn-toggle').children('.button-title').html(currentSelect);
+                    } else {
+                        $(this).find('.js-btn-toggle').removeClass('selected');
+                    }
+                }
+            })
+            $('.js-popup-wrap.js-popup-select .js-popup-block a').on('click', function() {
+                if ($(this).hasClass('active')) {} else {
+                    $(this).parents('.js-popup-wrap').find('.js-popup-block').find('.active').removeClass('active');
+                    $(this).addClass('active');
+                    $('.js-tab-block').removeClass('active');
+                    $('.js-tabs-nav').each(function() {
+                        $('.js-tab-block[data-tab*="' + $(this).find('.js-popup-block').find('.active').attr('data-tab') + '"]').addClass('active');
+                    })
+                }
+                $('.js-popup-wrap').each(function() {
+                    if ($(this).hasClass('js-popup-select')) {
+                        if ($(this).find('.js-popup-block').find('.active').length > 0) {
+                            $(this).find('.js-btn-toggle').addClass('selected');
+                            var currentSelect = $(this).find('.js-popup-block').find('.active').html();
+                            //$(this).find('.js-btn-toggle').children('.button-title').html(currentSelect);
+                            $(this).find('.js-btn-toggle').children('.button-title').val(currentSelect);
+                        } else {
+                            $(this).find('.js-btn-toggle').removeClass('selected');
+                        }
+                    }
+                })
+                $(this).parents('.js-popup-wrap').find('.js-btn-toggle').removeClass('active');
+                return false;
+            })
+        });
+    </script>
+
+
+    <link rel="stylesheet" href="./index_files/style.min.css">
+    <link rel="stylesheet" href="./index_files/fix.css">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+        $(document).ready(function() {
+
+            //header menu
+            $('.popup-menu-wrap .btn-submenu').on('click', function() {
+                if ($(this).hasClass('submenu-active')) {
+                    $(this).removeClass('submenu-active');
+                } else {
+                    if ($(window).innerWidth() > 1023) {
+                        $('.popup-menu-wrap .btn-submenu.submenu-active').removeClass('submenu-active');
+                    }
+                    $(this).addClass('submenu-active')
+                }
+                return false;
+            })
+            $(document).click(function(event) {
+                if (!$(event.target).closest('.submenu-inner-wrap').length) {
+                    if ($(window).innerWidth() > 1023) {
+                        $('.popup-menu-wrap .submenu-active').removeClass('submenu-active');
+                    }
+                }
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <!-- wrap -->
+    <div class="wrap wrap-inner wrap-main">
+
+        <!-- header -->
+        <header class="header header-new">
+            <div class="inner-wrap">
+                <div class="logo-wrap">
+                    <a href="https://credits.com/ru/" class="logo">
+
+                        <img src="./index_files/logo.svg" alt="">
+
+
+
+                    </a>
+                </div>
+
+                <div class="actions-wrap">
+
+                    <div class="action-wrap">
+                        <a href="https://credits.com/go.html" target="_blank" class="btn">Access your account</a>
+                    </div>
+
+
+
+                    <div class="popup-lang-wrap action-wrap js-popup-wrap">
+                        <a href="https://credits.com/ru/" class="btn-popup js-btn-toggle">Ru</a>
+                        <div class="popup-content-block js-popup-block">
+                            <ul class="menu">
+                                <li>
+                                    <a href="https://credits.com/ru/" class="btn-lang active">
+                                        <span class="button-ico">
+                                            <img src="./index_files/ru.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Русский</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/en/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/gb.svg" alt="">
+                                        </span>
+                                        <span class="button-title">English</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/ua/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/ua.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Українська</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/tr/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/tr.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Türkçe</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/sp/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/es.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Español</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://credits.com/de/" class="btn-lang">
+                                        <span class="button-ico">
+                                            <img src="./index_files/de.svg" alt="">
+                                        </span>
+                                        <span class="button-title">Deutsch</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popup-menu-wrap js-popup-wrap">
+                    <a href="https://credits.com/ru/" class="btn-popup btn-action-ico ico-menu js-btn-toggle"></a>
+                    <div class="popup-content-block js-popup-block">
+                        <a href="" class="btn-popup-close btn-action-ico ico-close js-btn-close"></a>
+                        <ul class="menu">
+                            <li>
+                                <a href="" class="btn-submenu">Personal</a>
+                                <div class="submenu-inner-wrap">
+                                    <div class="menu-inner-wrap">
+                                        <div class="menu-wrap menu-main">
+                                            <div class="menu-title">Personal products</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Debit card</a></li>
+                                                <li><a href="">IBAN euro</a></li>
+                                                <li><a href="">Transfers</a></li>
+                                                <li><a href="">Apple, Google Pay</a></li>
+                                                <li><a href="">Payments</a></li>
+                                                <li><a href="">Cashback</a></li>
+                                                <li><a href="">Invite a friend</a></li>
+                                                <li><a href="">Get $10 bonus</a></li>
+                                                <li><a href="">Crypto wallets</a></li>
+                                                <li><a href="">Buy crypto</a></li>
+                                                <li><a href="">Top up, withdrawal</a></li>
+                                                <li><a href="">Interest account</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-wrap menu-att">
+                                            <div class="menu-title">Help & Security</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Support</a></li>
+                                                <li><a href="">FAQ</a></li>
+                                                <li><a href="">Contact</a></li>
+                                                <li><a href="">Online chat</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-wrap">
+                                            <div class="menu-title">Plans for individuals</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Standard</a></li>
+                                                <li><a href="">Premium</a></li>
+                                                <li><a href="">Compare plans</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="" class="btn-submenu">Business</a>
+                                <div class="submenu-inner-wrap">
+                                    <div class="menu-inner-wrap">
+                                        <div class="menu-wrap menu-main">
+                                            <div class="menu-title">Personal products</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Debit card</a></li>
+                                                <li><a href="">IBAN euro</a></li>
+                                                <li><a href="">Transfers</a></li>
+                                                <li><a href="">Apple, Google Pay</a></li>
+                                                <li><a href="">Payments</a></li>
+                                                <li><a href="">Cashback</a></li>
+                                                <li><a href="">Invite a friend</a></li>
+                                                <li><a href="">Get $10 bonus</a></li>
+                                                <li><a href="">Crypto wallets</a></li>
+                                                <li><a href="">Buy crypto</a></li>
+                                                <li><a href="">Top up, withdrawal</a></li>
+                                                <li><a href="">Interest account</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-wrap menu-att">
+                                            <div class="menu-title">Help & Security</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Support</a></li>
+                                                <li><a href="">FAQ</a></li>
+                                                <li><a href="">Contact</a></li>
+                                                <li><a href="">Online chat</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="menu-wrap">
+                                            <div class="menu-title">Plans for individuals</div>
+                                            <ul class="submenu">
+                                                <li><a href="">Standard</a></li>
+                                                <li><a href="">Premium</a></li>
+                                                <li><a href="">Compare plans</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="">Manage finances</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Support</a></li>
+                        </ul>
+                        <div class="actions-wrap">
+                            <div class="action-wrap action-login">
+                                <a href="https://credits.com/go.html" target="_blank" class="link-color">Войти</a>
+                            </div>
+                            <div class="action-wrap">
+                                <a href="https://credits.com/go.html" target="_blank" class="btn">Access your account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+        <!-- /header -->
+
+
+        <a href="https://wa.me/85258032309" class="button-page-chat" target="_blank"></a>
+
+        <div class="page-full wrap-inner-pages">
+
+            <!--content-inner-wrap-->
+            <div class="">
+
+
+                <!--news-box-->
+                <div class="news-box section-second section-lead section-1320">
+                    <div class="box-inner-wrap">
+                        <div class="lead-inner-wrap">
+                            <a href="https://credits.com/en/news/713-q3-update.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-08/medium/1698315898_08_06_23-web.png" alt="Q3 Update">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">NEWS</span>
+                                    <span class="tile-title h5-title">Become the first customer of <br>
+                                        Credits Wallet!</span>
+                                    <span class="tile-date">7 Sep 2022</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="list-inner-wrap">
+                            <!--title-header-wrap-->
+                            <div class="title-header-wrap title-inner">
+                                <h1 class="h1-title">Latest articles</h1>
+                            </div>
+                            <!--/title-header-wrap-->
+                            <div class="items-wrap">
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <a href="https://credits.com/en/news/713-q3-update.html" class="item-tile-new">
+                                        <span class="tile-photo-wrap">
+                                            <span class="tile-photo photo-cover">
+                                                <img src="https://credits.com/uploads/posts/2024-08/medium/1698315898_08_06_23-web.png" alt="Q3 Update">
+                                            </span>
+                                        </span>
+                                        <span class="tile-info-wrap">
+                                            <span class="tile-title h4-title">Credits Earn <br> Interest Program</span>
+                                            <span class="tile-date">09 Aug 2024 · Latest news</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!--/item wrap-->
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <a href="https://credits.com/en/news/713-q3-update.html" class="item-tile-new">
+                                        <span class="tile-photo-wrap">
+                                            <span class="tile-photo photo-cover">
+                                                <img src="https://credits.com/uploads/posts/2024-08/medium/1698315898_08_06_23-web.png" alt="Q3 Update">
+                                            </span>
+                                        </span>
+                                        <span class="tile-info-wrap">
+                                            <span class="tile-title h4-title">Credits Earn <br> Interest Program</span>
+                                            <span class="tile-date">09 Aug 2024 · Latest news</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!--/item wrap-->
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <a href="https://credits.com/en/news/713-q3-update.html" class="item-tile-new">
+                                        <span class="tile-photo-wrap">
+                                            <span class="tile-photo photo-cover">
+                                                <img src="https://credits.com/uploads/posts/2024-08/medium/1698315898_08_06_23-web.png" alt="Q3 Update">
+                                            </span>
+                                        </span>
+                                        <span class="tile-info-wrap">
+                                            <span class="tile-title h4-title">Credits Earn <br> Interest Program</span>
+                                            <span class="tile-date">09 Aug 2024 · Latest news</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!--/item wrap-->
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <a href="https://credits.com/en/news/713-q3-update.html" class="item-tile-new">
+                                        <span class="tile-photo-wrap">
+                                            <span class="tile-photo photo-cover">
+                                                <img src="https://credits.com/uploads/posts/2024-08/medium/1698315898_08_06_23-web.png" alt="Q3 Update">
+                                            </span>
+                                        </span>
+                                        <span class="tile-info-wrap">
+                                            <span class="tile-title h4-title">Credits Earn <br> Interest Program</span>
+                                            <span class="tile-date">09 Aug 2024 · Latest news</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!--/item wrap-->
+                                <!--item wrap-->
+                                <div class="item-wrap">
+                                    <a href="https://credits.com/en/news/713-q3-update.html" class="item-tile-new">
+                                        <span class="tile-photo-wrap">
+                                            <span class="tile-photo photo-cover">
+                                                <img src="https://credits.com/uploads/posts/2024-08/medium/1698315898_08_06_23-web.png" alt="Q3 Update">
+                                            </span>
+                                        </span>
+                                        <span class="tile-info-wrap">
+                                            <span class="tile-title h4-title">Credits Earn <br> Interest Program</span>
+                                            <span class="tile-date">09 Aug 2024 · Latest news</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                <!--/item wrap-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/news-box-->
+
+                <!--news-box-->
+                <div class="news-box section-second section-1320">
+                    <div class="items-wrap">
+
+
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/713-q3-update.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-08/medium/1698315898_08_06_23-web.png" alt="Q3 Update">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">NEWS</span>
+                                    <span class="tile-title h4-title">Q3 Update</span>
+                                    <span class="tile-date">01 Aug 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/712-credits-earn-interest-program.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-07/medium/image_2024_07_18t09_31_01_758z.png" alt="Credits Earn Interest Program">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Credits Earn Interest Program</span>
+                                    <span class="tile-date">18 Jul 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/711-q3-24-credits-blockchain-roadmap.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-07/medium/1720545074_1698315898_08_06_23-web.png" alt="Q3-24 Credits blockchain roadmap">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Q3-24 Credits blockchain roadmap</span>
+                                    <span class="tile-date">09 Jul 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/710-dev-journal-20240706.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-07/medium/1698315898_08_06_23-web.png" alt="Dev. Journal 2024.07.06">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.07.06</span>
+                                    <span class="tile-date">06 Jul 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/707-dev-journal-20240621.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-06/medium/1698315898_08_06_23-web.png" alt="Dev. Journal 2024.06.21">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.06.21</span>
+                                    <span class="tile-date">21 Jun 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/706-dev-journal-20240614.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-06/medium/1698315898_08_06_23-web.png" alt="Dev. Journal 2024.06.14">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.06.14</span>
+                                    <span class="tile-date">14 Jun 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+                    </div>
+
+                    <div class="main-action-wrap mt-60">
+                        <a href="" class="btn button-vlarge">All articles</a>
+                    </div>
+
+
+                </div>
+                <!--/news-box-->
+
+                <!--news-box-->
+                <div class="news-box section-second section-1040">
+                    <!--title-header-wrap-->
+                    <div class="title-header-wrap title-inner title-center">
+                        <h1 class="h1-title">Latest news</h1>
+                    </div>
+                    <!--/title-header-wrap-->
+
+                    <div class="items-wrap">
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/713-q3-update.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-08/medium/1698315898_08_06_23-web.png" alt="Q3 Update">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">NEWS</span>
+                                    <span class="tile-title h4-title">Q3 Update</span>
+                                    <span class="tile-date">01 Aug 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/712-credits-earn-interest-program.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-07/medium/image_2024_07_18t09_31_01_758z.png" alt="Credits Earn Interest Program">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Credits Earn Interest Program</span>
+                                    <span class="tile-date">18 Jul 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/711-q3-24-credits-blockchain-roadmap.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-07/medium/1720545074_1698315898_08_06_23-web.png" alt="Q3-24 Credits blockchain roadmap">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Q3-24 Credits blockchain roadmap</span>
+                                    <span class="tile-date">09 Jul 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/710-dev-journal-20240706.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-07/medium/1698315898_08_06_23-web.png" alt="Dev. Journal 2024.07.06">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.07.06</span>
+                                    <span class="tile-date">06 Jul 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/707-dev-journal-20240621.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-06/medium/1698315898_08_06_23-web.png" alt="Dev. Journal 2024.06.21">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.06.21</span>
+                                    <span class="tile-date">21 Jun 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/706-dev-journal-20240614.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-06/medium/1698315898_08_06_23-web.png" alt="Dev. Journal 2024.06.14">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.06.14</span>
+                                    <span class="tile-date">14 Jun 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/705-know-your-client-kyc-update.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-06/medium/1718103603_07_09_23-tw_1.png" alt="Know your client (KYC) update">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Know your client (KYC) update</span>
+                                    <span class="tile-date">11 Jun 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/704-credits-amp-googles-startup-program.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-05/1715771901196.png" alt="Credits &amp; Google's Startup Program">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Credits &amp; Google's Startup Program</span>
+                                    <span class="tile-date">14 May 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/703-development-roadmap-part-q2-2024.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-05/medium/1715592664525.png" alt="Development roadmap part | Q2 2024">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Development roadmap part | Q2 2024</span>
+                                    <span class="tile-date">13 May 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/702-credits’-cashback-coming-soon.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-05/medium/1715159395648.png" alt="Credits’ cashback coming soon!">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Credits’ cashback coming soon!</span>
+                                    <span class="tile-date">08 May 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/701-how-to-get-credits-premium-plan-for-free.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-04/medium/1714043780735.png" alt="How to get Credits' Premium plan for FREE?">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">How to get Credits' Premium plan for FREE?</span>
+                                    <span class="tile-date">24 Apr 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/698-credits’-staking-сoming-soon.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-04/medium/1712918635987.png" alt="Credits’ staking сoming soon!">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Credits’ staking сoming soon!</span>
+                                    <span class="tile-date">11 Apr 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/693-launch-of-solidity-on-our-platform.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-03/medium/19_07_2023-website-1.png" alt="Launch of Solidity on our platform!">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Launch of Solidity on our platform!</span>
+                                    <span class="tile-date">26 Mar 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/692-dev-journal-20240307.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-03/medium/1709828079_1698315898_08_06_23-web.png" alt="Dev. Journal 2024.03.07">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.03.07</span>
+                                    <span class="tile-date">07 Mar 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/691-the-febrary-2024-update-for-the-credits-wallet.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-03/medium/1709826720531.png" alt="The Febrary 2024 update for the Credits Wallet">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">The Febrary 2024 update for the Credits Wallet</span>
+                                    <span class="tile-date">07 Mar 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/690-credits-are-now-in-new-blockchain-networks.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-03/medium/01_03_24-tw_1.png" alt="Credits are now in new blockchain networks!">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Credits are now in new blockchain networks!</span>
+                                    <span class="tile-date">01 Mar 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/689-release-of-the-first-version-of-sdk-from-credits.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-03/medium/01_03_24-tw_2.png" alt="Release of the first version of SDK from CREDITS">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Release of the first version of SDK from CREDITS</span>
+                                    <span class="tile-date">01 Mar 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/688-dev-journal-20240229.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-03/medium/1698315898_08_06_23-web.png" alt="Dev. Journal 2024.03.01">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.03.01</span>
+                                    <span class="tile-date">01 Mar 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/687-technical-works-on-credits-platform.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-02/1708961228054.png" alt="Technical works on Credits platform.">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Technical works on Credits platform.</span>
+                                    <span class="tile-date">26 Feb 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/686-dev-journal-20240215.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-02/medium/1708020122_1698315898_08_06_23-web.png" alt="Dev. Journal 2024.02.15">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.02.15</span>
+                                    <span class="tile-date">15 Feb 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/685-dev-journal-20240208.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-02/medium/1707408220_1698315898_08_06_23-web.png" alt="Dev. Journal 2024.02.08">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.02.08</span>
+                                    <span class="tile-date">08 Feb 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/684-the-january-2024-update-for-the-credits-wallet.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-02/medium/1707404114_24.png" alt="The January 2024 update for the Credits Wallet">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">The January 2024 update for the Credits Wallet</span>
+                                    <span class="tile-date">07 Feb 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/683-dev-journal-20240201.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-02/medium/1698315898_08_06_23-web.png" alt="Dev. Journal 2024.02.01">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.02.01</span>
+                                    <span class="tile-date">01 Feb 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/682-dev-journal-20240125.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-01/medium/1706186942_1698315898_08_06_23-web.png" alt="Dev. Journal 2024.01.25">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.01.25</span>
+                                    <span class="tile-date">25 Jan 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/681-dev-journal-20240118.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-01/medium/1705567300_1698315898_08_06_23-web.png" alt="Dev. Journal 2024.01.18">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.01.18</span>
+                                    <span class="tile-date">18 Jan 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/680-dev-journal-20240111.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2024-01/medium/1698315898_08_06_23-web.png" alt="Dev. Journal 2024.01.11">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2024.01.11</span>
+                                    <span class="tile-date">11 Jan 2024</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+
+
+
+                        <!--item wrap-->
+                        <div class="item-wrap">
+                            <a href="https://credits.com/en/news/679-dev-journal-20231228.html" class="item-tile-new">
+                                <span class="tile-photo-wrap">
+                                    <span class="tile-photo photo-cover">
+                                        <img src="https://credits.com/uploads/posts/2023-12/medium/1703748403_1698315898_08_06_23-web.png" alt="Dev. Journal 2023.12.28">
+                                    </span>
+                                </span>
+                                <span class="tile-info-wrap">
+                                    <span class="tile-category">Latest news about Credits.</span>
+                                    <span class="tile-title h4-title">Dev. Journal 2023.12.28</span>
+                                    <span class="tile-date">28 Dec 2023</span>
+                                </span>
+                            </a>
+                        </div>
+                        <!--/item wrap-->
+
+
+
+                    </div>
+
+                    <style>
+                        .pagenav-box {
+                            display: none;
+                        }
+
+                        .news-box .pagenav-box {
+                            display: flex;
+                        }
+
+                        .pagenav-box .btn-page:nth-child(7)~.btn-page {
+                            display: flex;
+                        }
+                    </style>
+
+                    <!--pagenav-box-->
+                    <div class="pagenav-box">
+                        <a href="#" class="btn-page page-prev"></a>
+                        <div class="pages-wrap">
+                            <a class="btn-page active">1</a> <a class="btn-page" href="https://credits.com/news/page/2/">2</a>
+                            <a class="btn-page" href="https://credits.com/news/page/3/">3</a> <a class="btn-page" href="https://credits.com/news/page/4/">4</a> <a class="btn-page" href="https://credits.com/news/page/5/">5</a> <a class="btn-page" href="https://credits.com/news/page/6/">6</a> <a class="btn-page" href="https://credits.com/news/page/7/">7</a> <a class="btn-page" href="https://credits.com/news/page/8/">8</a> <a class="btn-page" href="https://credits.com/news/page/9/">9</a> <a class="btn-page" href="https://credits.com/news/page/10/">10</a> <span class="nav_ext">...</span> <a class="btn-page" href="https://credits.com/news/page/18/">18</a>
+                        </div>
+                        <a href="https://credits.com/news/page/2/" class="btn-page page-next"></a>
+                    </div>
+                    <!--/pagenav-box-->
+
+                </div>
+                <!--/news-box-->
+
+            </div>
+            <!--/content-inner-wrap-->
+
+        </div>
+
+    </div>
+    <!-- /wrap -->
+
+
+
+</body>
+
+</html>
