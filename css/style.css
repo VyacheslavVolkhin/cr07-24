@@ -2150,7 +2150,8 @@
       flex: 1;
 }
 .news-box.section-second .item-tile-new:not(.tile-main) .tile-photo:before {
-  padding-top: 75.3%;
+  padding-top: 47.4%;
+  min-height: 175px;
 }
 .news-box.section-second .item-tile-new:not(.tile-main) .tile-title {
   min-height: 0;
