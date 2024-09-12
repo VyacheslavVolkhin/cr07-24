@@ -27,6 +27,7 @@
 						<li><a href="standart.html">Standart</a></li>
 						<li><a href="security.html">Security</a></li>
 						<li><a href="news.html">News</a></li>
+						<li><a href="" class="js-popup-open" data-popup="popup-subscribe">Popup subscribe</a></li>
 					</ul>
 				</div>
 			</div>
@@ -37,6 +38,50 @@
 
         <!-- build:section scripts -->
         <!-- /build -->
+
+		<!--popup-outer-box-->
+		<div class="popup-outer-box popup-full popup-subscribe active" id="popup-subscribe">
+			<div class="popup-box">
+				<a href="" class="btn-action-ico ico-close js-popup-close"></a>
+				<div class="popup-content-wrap">
+					<form action="/" class="frm-popup-subscribe" onsubmit="this.classList.toggle('form-sended');return false;">
+						<div class="form-wrap-fields">
+							<div class="frm-popup-title-wrap">
+								<div class="elm-ico">
+									<img src="./img/icons/sender.svg" alt="">
+								</div>
+								<div class="frm-popup-title">Subscribe to our news</div>
+							</div>
+							<div class="frm-main-button">
+								<div class="field-input">
+									<input type="email" pattern="/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:[a-zA-Z0-9-]+)*$/"
+										class="form-input" placeholder="Your Email" required>
+								</div>
+								<div class="field-button">
+									<button type="submit" class="btn">Subscribe</button>
+								</div>
+							</div>
+							<div class="frm-inner-info">By clicking, you agree to our <a href="" class="link-main">Terms & Conditions</a> ,
+								<a href="" class="link-main">Privacy and Data Protection Policy</a></div>
+						</div>
+						<div class="form-wrap-success">
+							<div class="frm-popup-title-wrap">
+								<div class="elm-ico">
+									<img src="./img/icons/success.svg" alt="">
+								</div>
+								<div class="frm-popup-title">Thanks for your subscription</div>
+								<div class="frm-popup-button">
+									<a href="" class="btn js-popup-close">Close</a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div><!--/popup-outer-box-->
+
+
+
     
     </body>
 </html>
