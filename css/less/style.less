@@ -2228,9 +2228,17 @@
 }
 /* end add 09.2024 */
 /*  add 09.11.2024 */
+
 .popup-outer-box {
-	&.popup-full {
-		max-width: 100%;
+	&.popup-right-bottom {
+		width: 400px;
+		max-width: calc(100% - 20px);
+		position: fixed;
+		bottom: 0;right: 0;
+		left: auto;
+		top: auto;
+		padding: 0 20px 150px 0;;
+		background: none;
 	}
 	&.popup-subscribe {
 		&:has(.form-sended) {
@@ -2248,6 +2256,7 @@
 				position: absolute;
 				top: 11px;right: 11px;
 				width: 24px;height: 24px;
+				z-index: 10;
 				&:after {
 					display: none;
 				}
@@ -2294,6 +2303,16 @@
 				font-weight: 500;
 				width: 100%;
 			}
+		}
+	}
+	.frm-button-info {
+		font-size: 14px;
+		line-height: 20px;
+		padding-bottom: 10px;
+		text-align: center;
+		color: var(--clr-light);
+		#closing-timer {
+			display: inline;
 		}
 	}
 	.frm-main-button {
@@ -2353,7 +2372,7 @@
 		line-height: (32/28);
 		font-weight: bold;
 		color: #000;
-		letter-spacing: -2%;
+		letter-spacing: -0.02em;
 		margin-bottom: 10px;
 		margin-top: 16px;
 		&:first-child {
@@ -2436,6 +2455,21 @@
 	.main-top-box .form-wrap-success .elm-ico {
 		margin-left: auto;
 		margin-right: auto;
+	}
+}
+@media (max-width: 429px) {
+	.popup-outer-box.popup-subscribe .popup-box {
+		padding: 10px;
+		min-height: 0;
+	}
+	.frm-popup-subscribe .frm-popup-title-wrap .elm-ico {
+		height: 100px;
+	}
+	.frm-popup-subscribe .frm-popup-title {
+		font-size: 22px;
+	}
+	.frm-popup-subscribe .form-wrap-success .frm-popup-title-wrap {
+		min-height: 360px;
 	}
 }
 @media (min-width: 900px) {

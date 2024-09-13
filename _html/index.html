@@ -39,12 +39,35 @@
         <!-- build:section scripts -->
         <!-- /build -->
 
+
+		<script>
+			function openPopup() {
+				let countdownElement = document.getElementById('closing-timer');
+				let countdown = 4;
+				countdownElement.textContent = countdown;
+
+				let timer = setInterval(function() {
+					countdown -= 1;
+					countdownElement.textContent = countdown;
+
+					if (countdown <= 0) {
+						clearInterval(timer);
+						closePopup();
+					}
+				}, 1000);
+			}
+			function closePopup() {
+				let popup = document.getElementById('popup-subscribe');
+				popup.classList.remove('active')
+			}
+		</script>
+
 		<!--popup-outer-box-->
-		<div class="popup-outer-box popup-full popup-subscribe active" id="popup-subscribe">
+		<div class="popup-outer-box popup-right-bottom popup-subscribe active" id="popup-subscribe">
 			<div class="popup-box">
-				<a href="" class="btn-action-ico ico-close js-popup-close"></a>
+				<a href="" class="btn-action-ico ico-close js-popup-close" onclick="this.closest('.popup-outer-box').classList.remove('active');return false;"></a>
 				<div class="popup-content-wrap">
-					<form action="/" class="frm-popup-subscribe" onsubmit="this.classList.toggle('form-sended');return false;">
+					<form action="/" class="frm-popup-subscribe" onsubmit="this.classList.toggle('form-sended');openPopup();return false;">
 						<div class="form-wrap-fields">
 							<div class="frm-popup-title-wrap">
 								<div class="elm-ico">
@@ -71,6 +94,7 @@
 								</div>
 								<div class="frm-popup-title">Thanks for your subscription</div>
 								<div class="frm-popup-button">
+									<div class="frm-button-info">Closing in <div id="closing-timer"></div> seconds</div>
 									<a href="" class="btn js-popup-close">Close</a>
 								</div>
 							</div>
@@ -79,6 +103,8 @@
 				</div>
 			</div>
 		</div><!--/popup-outer-box-->
+		
+		
 
 
 
