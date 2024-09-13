@@ -2334,9 +2334,6 @@
   padding: 0 20px 150px 0;
   background: none;
 }
-.popup-outer-box.popup-subscribe:has(.form-sended) .popup-box {
-  background-color: #F2F4FF;
-}
 .popup-outer-box.popup-subscribe .popup-box {
   width: 400px;
   padding: 23px;
