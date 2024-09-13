@@ -2408,6 +2408,19 @@
 	animation: fadeinn ease 0.2s;
 }
 .main-top-box {
+	&.form-small {
+		&.no-pbottom {
+			.info-inner-wrap {
+				padding-bottom: 20px;
+			}
+		}
+		.frm-main-button {
+			.btn {
+				min-width: 16rem;
+				padding: 0 14px;
+			}
+		}
+	}
 	.frm-main-button {
 		.form-input {
 			border-color: #DDDFE3;
@@ -2470,6 +2483,21 @@
 	}
 	.frm-popup-subscribe .form-wrap-success .frm-popup-title-wrap {
 		min-height: 360px;
+	}
+}
+@media (min-width: 640px) {
+	.main-top-box {
+		&.form-small {
+			.frm-main-button {
+				max-width: 500px;
+			}
+			.frm-inner-info {
+				max-width: 500px;
+			}
+			.title-wrap {
+				max-width: 500px;
+			}
+		}
 	}
 }
 @media (min-width: 900px) {
