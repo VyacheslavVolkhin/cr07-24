@@ -248,6 +248,27 @@
 .popup-menu-wrap .menu-main .submenu li {
   break-inside: avoid-column;
 }
+.popup-menu-wrap .menu-main .submenu ul {
+  columns: 1;
+  column-gap: 0;
+}
+.popup-menu-wrap .menu-main .submenu:has(ul) {
+  columns: 1;
+  column-gap: 0;
+}
+.popup-menu-wrap .menu-main .submenu:has(ul) > li {
+  display: -ms-flexbox;
+  display: flex;
+}
+.popup-menu-wrap .menu-main .submenu:has(ul) > li ul {
+  width: 50%;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 0 5px 0 0;
+}
+.popup-menu-wrap .menu-main .submenu:has(ul) > li ul:last-child {
+  padding: 0 0 0 5px;
+}
 .popup-menu-wrap .btn-submenu.submenu-active ~ .submenu-inner-wrap {
   display: block;
 }

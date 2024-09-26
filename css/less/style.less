@@ -240,6 +240,25 @@
 				page-break-inside: avoid;
 				break-inside: avoid-column;
 			}
+			ul {
+				columns: 1;
+				column-gap: 0;
+			}
+			&:has(ul) {
+				columns: 1;
+				column-gap: 0;
+				&>li {
+					display: flex;
+					ul {
+						width: 50%;
+						flex-shrink: 0;
+						padding: 0 5px 0 0;
+						&:last-child {
+							padding: 0 0 0 5px;
+						}
+					}
+				}
+			}
 		}
 	}
 	.btn-submenu {
