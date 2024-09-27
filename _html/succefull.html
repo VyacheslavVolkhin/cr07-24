@@ -1,13 +1,175 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <!-- build:section head -->
-    <!-- /build -->
+    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Credits.com</title>
+		<meta name="charset" content="utf-8">
+		<meta name="title" content="Credits.com">
+		<meta name="description" content="Use Credits wallet for banking and crypto.">
+		<meta name="keywords" content="Credits.com">
+		<link rel="canonical" href="https://credits.com/">
+		<link rel="alternate" type="application/rss+xml" title="Credits.com" href="https://credits.com/rss.xml">
+		<!-- new -->
+		
+	
+		<!-- /new -->
+		<link rel="search" type="application/opensearchdescription+xml" title="Credits.com"
+			href="https://credits.com/index.php?do=opensearch">
+		<meta property="twitter:card" content="summary">
+		<meta property="twitter:title" content="Credits.com">
+		<meta property="twitter:description" content="Use Credits wallet for banking and crypto.">
+		<meta property="og:type" content="article">
+		<meta property="og:site_name" content="Credits.com">
+		<meta property="og:title" content="Credits.com">
+		<meta property="og:description" content="Use Credits wallet for banking and crypto.">
+		<link href="./index_files/index.php" rel="stylesheet" type="text/css">
+	
+	
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:image" content="/templates/en/img/logo-icon.png">
+		<link rel="shortcut icon" href="https://credits.com/templates/en/img/logo_blue.png" type="image/x-icon">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+		<link href="./index_files/css2" rel="stylesheet">
+		<link rel="stylesheet" href="./index_files/reset.css">
+	
+		<script src="./js/jquery.min.js"></script>
+		<script src="./js/scripts.js"></script>
+	
+		<script>
+			$(document).ready(function(){
+				   //popup block
+				$('.js-popup-wrap .js-btn-toggle').on('click', function () {
+					if ($(this).hasClass('active')) {
+						$(this).removeClass('active');
+						$('body').removeClass('menu-show');
+						$('.js-popup-wrap').removeClass('popup-right');
+					} else {
+						$('.js-popup-wrap:not(.no-close) .js-btn-toggle').removeClass('active');
+						$(this).addClass('active');
+						if ($(this).parent().hasClass('main-menu-wrap')) {
+							$('body').addClass('menu-show');
+						}
+						pLeft = $(this).parent('.js-popup-wrap').find('.js-popup-block').offset().left;
+						pWidth = $(this).parent('.js-popup-wrap').find('.js-popup-block').outerWidth();
+						pMax = pLeft + pWidth;
+						if (pMax > $('.wrap').width()) {
+							$(this).parent('.js-popup-wrap').addClass('popup-right');
+						} else {
+							$('.js-popup-wrap').removeClass('popup-right');
+						}
+					}
+					return false;
+				})
+				$('.js-popup-wrap .js-btn-close').on('click', function () {
+					$(this).parents('.js-popup-wrap').children('.js-btn-toggle').removeClass('active');
+					$('.js-popup-wrap').removeClass('popup-right');
+					$('body').removeClass('menu-show');
+					return false;
+				})
+				$(document).click(function (event) {
+					if ($(event.target).closest(".js-popup-block").length) return;
+					$('.js-popup-wrap:not(.no-close) .js-btn-toggle').removeClass('active');
+					$('.js-popup-wrap').removeClass('popup-right');
+					$('body').removeClass('menu-show');
+					event.stopPropagation();
+				});
+				$('.js-popup-wrap').each(function () {
+					if ($(this).hasClass('js-popup-select')) {
+						if ($(this).find('.js-popup-block').find('.active').length > 0) {
+							$(this).find('.js-btn-toggle').addClass('selected');
+							var currentSelect = $(this).find('.js-popup-block').find('.active').html();
+							$(this).find('.js-btn-toggle').children('.button-title').html(currentSelect);
+						} else {
+							$(this).find('.js-btn-toggle').removeClass('selected');
+						}
+					}
+				})
+				$('.js-popup-wrap.js-popup-select .js-popup-block a').on('click', function () {
+					if ($(this).hasClass('active')) { } else {
+						$(this).parents('.js-popup-wrap').find('.js-popup-block').find('.active').removeClass('active');
+						$(this).addClass('active');
+						$('.js-tab-block').removeClass('active');
+						$('.js-tabs-nav').each(function () {
+							$('.js-tab-block[data-tab*="' + $(this).find('.js-popup-block').find('.active').attr('data-tab') + '"]').addClass('active');
+						})
+					}
+					$('.js-popup-wrap').each(function () {
+						if ($(this).hasClass('js-popup-select')) {
+							if ($(this).find('.js-popup-block').find('.active').length > 0) {
+								$(this).find('.js-btn-toggle').addClass('selected');
+								var currentSelect = $(this).find('.js-popup-block').find('.active').html();
+								//$(this).find('.js-btn-toggle').children('.button-title').html(currentSelect);
+								$(this).find('.js-btn-toggle').children('.button-title').val(currentSelect);
+							} else {
+								$(this).find('.js-btn-toggle').removeClass('selected');
+							}
+						}
+					})
+					$(this).parents('.js-popup-wrap').find('.js-btn-toggle').removeClass('active');
+					return false;
+				})
+			});
+		</script>
+	
+	
+		<link rel="stylesheet" href="./index_files/style.min.css">
+		<link rel="stylesheet" href="./index_files/fix.css">
+	
+		
+		<link rel="stylesheet" href="./css/style.css">
+	
+		<script>
+			$(document).ready(function(){
+	
+				//header menu
+				$('.popup-menu-wrap .btn-submenu').on('click', function() {
+					if ($(this).hasClass('submenu-active')) {
+						$(this).removeClass('submenu-active');
+					} else {
+						if ($(window).innerWidth() > 1023) {
+							$('.popup-menu-wrap .btn-submenu.submenu-active').removeClass('submenu-active');
+						}
+						$(this).addClass('submenu-active')
+					}
+					return false;
+				})
+				$(document).click(function (event) {
+					if (!$(event.target).closest('.submenu-inner-wrap').length) {
+						if ($(window).innerWidth() > 1023) {
+							$('.popup-menu-wrap .submenu-active').removeClass('submenu-active');
+						}
+					}
+				});
+			});
+		</script>
+		
+		
+	</head>
     <body>
         <!-- wrap -->
         <div class="wrap wrap-inner wrap-main">
             
-            <!-- build:section header -->
-            <!-- /build -->
+            <!-- header -->
+<header class="header header-new">
+	<div class="inner-wrap">
+		<div class="logo-wrap">
+			<a href="https://credits.com/ru/" class="logo">
+
+				<img src="./index_files/logo.svg" alt="">
+
+
+
+			</a>
+		</div>
+
+	</div>
+</header>
+<!-- /header -->
+
+
 			 
 			<!--main-message-box-->
 			<div class="main-message-box cnt-section">
