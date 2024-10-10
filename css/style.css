@@ -2705,8 +2705,59 @@
 }
 /* end succefull/error styles */
 /* section text */
+.btn-action-toggle {
+  display: inline-block;
+  position: relative;
+  padding: 0 26px 0 0;
+  transition: all ease 0.2s;
+}
+.btn-action-toggle:before {
+  content: attr(data-show);
+}
+.btn-action-toggle:after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  background: url(../img/icons/arrow-toggle.svg) center no-repeat;
+  background-size: 100% auto;
+  transition: all ease 0.2s;
+  top: 50%;
+  right: 0;
+  margin-top: -12px;
+}
+.btn-action-toggle.active:before {
+  content: attr(data-hide);
+}
+.btn-action-toggle.active:after {
+  rotate: 180deg;
+}
+.text-hidden-wrap {
+  display: none;
+  animation: fadein ease 0.2s;
+}
+.text-hidden-wrap:has(~.text-hidden-action.active) {
+  display: block;
+}
+.text-hidden-action {
+  font-weight: 500;
+}
+.text-hidden-action.active .btn-action-toggle:before {
+  content: attr(data-hide);
+}
+.text-hidden-action.active .btn-action-toggle:after {
+  rotate: 180deg;
+}
 .section-text-inner-box {
   background: #F3F5F8;
+}
+.section-text-inner-box .text-section-wrap {
+  margin-bottom: 89.6px;
+  margin-bottom: 5.6rem;
+}
+.section-text-inner-box .text-section-wrap:last-child {
+  margin-bottom: 0;
 }
 .section-text-inner-box .text-inner-wrap {
   margin: 0 auto;
@@ -2723,7 +2774,8 @@
   line-height: 1.2;
   font-weight: bold;
   color: #000;
-  margin: 1.16666667em 0;
+  margin: 144px 0;
+  margin: 9rem 0;
 }
 .section-text-inner-box .h1-title:first-child,
 .section-text-inner-box .h2-title:first-child {
@@ -2740,9 +2792,37 @@
 .section-text-inner-box .h3-title:first-child {
   margin-top: 0;
 }
+.section-text-inner-box .text-hidden-action {
+  padding-bottom: 23px;
+  border-bottom: 1px solid #DDDFE3;
+}
 .section-text-inner-box p,
-.section-text-inner-box ul {
+.section-text-inner-box ul,
+.section-text-inner-box .text-hidden-wrap,
+.section-text-inner-box .text-hidden-action {
   margin-bottom: 12px;
+}
+.section-text-inner-box p:last-child,
+.section-text-inner-box ul:last-child,
+.section-text-inner-box .text-hidden-wrap:last-child,
+.section-text-inner-box .text-hidden-action:last-child {
+  margin-bottom: 0;
+}
+.section-text-inner-box li {
+  padding-left: 20px;
+  position: relative;
+}
+.section-text-inner-box li:after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 0.7em;
+  left: 4px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: currentColor;
 }
 .section-text-inner-box .text-dark {
   color: #000;
