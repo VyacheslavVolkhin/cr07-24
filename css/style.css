@@ -2774,11 +2774,15 @@
   line-height: 1.2;
   font-weight: bold;
   color: #000;
-  margin: 144px 0;
-  margin: 9rem 0;
+  margin: 64px 0;
+  margin: 4rem 0;
 }
 .section-text-inner-box .h1-title:first-child,
 .section-text-inner-box .h2-title:first-child {
+  margin-top: 0;
+}
+.section-text-inner-box .h1-title + .h3-title,
+.section-text-inner-box .h2-title + .h3-title {
   margin-top: 0;
 }
 .section-text-inner-box .h3-title {
@@ -2787,7 +2791,8 @@
   line-height: 1.2;
   letter-spacing: -0.05em;
   color: #121214;
-  margin: 12px 0;
+  margin: 88px 0 12px 0;
+  margin: 5.5rem 0 12px 0;
 }
 .section-text-inner-box .h3-title:first-child {
   margin-top: 0;
