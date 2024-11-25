@@ -3225,3 +3225,55 @@
   }
 }
 /* end payments page */
+/* breadcrumbs styles */
+.breadcrumbs-box {
+  color: #7D7E80;
+  background: #DDE5ED;
+  font-size: 18px;
+  line-height: 1.22222222;
+  padding: 7px 0;
+  margin: 0;
+}
+.breadcrumbs-box .menu {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 -20px 0 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.breadcrumbs-box .menu li {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  padding: 0 20px 0 0;
+  max-width: 100%;
+}
+.breadcrumbs-box .menu li:after {
+  content: "/";
+  display: block;
+  width: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+.breadcrumbs-box .menu li:last-child:after {
+  display: none;
+}
+.breadcrumbs-box a {
+  transition: all ease 0.2s;
+  color: inherit;
+}
+.breadcrumbs-box a:hover {
+  filter: brightness(0.8);
+}
+@media (max-width: 1023px) {
+  .breadcrumbs-box {
+    font-size: 16px;
+  }
+}
+@media (max-width: 479px) {
+  .breadcrumbs-box {
+    font-size: 15px;
+  }
+}
+/* end breadcrumbs styles */
