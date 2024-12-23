@@ -95,24 +95,59 @@
 									<div class="info-wrap">09:45 sec</div>
 								</div>
 								<div class="panel-inner-wrap">
-									<div class="panel-title">Payer’s information</div>
+									<div class="panel-title">Currency</div>
 									<div class="frm-row">
 										<div class="frm-field">
-											<div class="field-input-content">
-												<input type="email" class="form-input" placeholder="E-mail">
-											</div>
-										</div>
-									</div>
-									<div class="frm-row-submit">
-										<div class="frm-field field-button">
-											<button type="submit" class="btn">Continue</button>
-										</div>
-										<div class="frm-field field-skip">
-											<a href="">Skip adding e-mail</a>
+											<a href="" class="btn button-menu open">
+												<div class="button-ico">
+													<img src="./img/icons/button01.svg" alt="">
+												</div>
+												<div class="button-title">Bitcoin BTC</div>
+											</a>
 										</div>
 									</div>
 								</div>
-								<div class="panel-info-wrap"><a href="">Why you need to add email?</a></div>
+								<div class="panel-inner-wrap">
+									<div class="panel-title">Amount</div>
+									<div class="frm-row">
+										<div class="frm-field">
+											<div class="field-input-content">
+												<input type="text" class="form-input form-input-large form-input-bold" value="0.00201 BTC">
+												<div class="field-buttons">
+													<a href="" class="btn-action-ico ico-copy button-field"></a>
+												</div>
+											</div>
+											<div class="field-input-info">Transfer exactly this amout. <a href="" class="link-att">Find out why?</a></div>
+										</div>
+									</div>
+									<div class="frm-row">
+										<div class="frm-field">
+											<div class="field-input-info">Transfer to this account address:</div>
+											<div class="field-input-content">
+												<input type="text" class="form-input form-input-large" value="1EnojHx79AE4yF2PZYMN79WQHV4dUmJVVq">
+												<div class="field-buttons">
+													<a href="" class="btn-action-ico ico-copy button-field"></a>
+													<a href="" class="btn-action-ico ico-code button-field" onclick="this.classList.toggle('active');return false;"></a>
+												</div>
+											</div>
+											<div class="field-input-code">
+												<div class="field-code-action">
+													<a href="" class="btn button-gray" onclick="this.closest('.frm-field').querySelector('.active').classList.remove('active');return false;">close</a>
+												</div>
+												<div class="field-code-content">
+													<div class="elm-photo">
+														<img src="./img/code.png" alt="">
+													</div>
+													<div class="field-code-info">or&nbsp;scan <br>the&nbsp;QR code</div>
+												</div>
+												<div class="field-code-button">
+													<a href="" class="btn">I’ve payed</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="panel-info-wrap">Transfers from exchange might file. <a href="" class="link-att">Find out why?</a></div>
 							</div>
 							<!--/content-wrap-->
 						</div>
