@@ -3190,7 +3190,12 @@
 	}
 }
 /* end breadcrumbs styles */
-/* panel styles */
+/* panel styles 333 */
+.wrap {
+	&:has(.order-panel-box) {
+		padding-top: 40px;
+	}
+}
 .btn-action-ico {
 	&.ico-copy {
 		&:before {
@@ -3217,13 +3222,13 @@
 	&.button-menu {
 		border: 1px solid #DDDFE3;
 		background: none;
-		font-size: 12px;
+		font-size: 14px;
 		font-weight: 400;
 		color: #151516;
 		text-align: left;
 		justify-content: flex-start;
 		padding: 0 40px 0 11px;
-		height: 40px;
+		height: 44px;
 		border-radius: 8px;
 		&.open {
 			&:before {
@@ -3273,7 +3278,7 @@
 	margin-bottom: 7rem;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 80rem;
+	max-width: 88rem;
 	font-size: 12px;
 	line-height: (16/12);
 	color: #151516;
@@ -3286,8 +3291,8 @@
 			margin-bottom: 10px;
 		}
 		.btn-popup {
-			font-size: 18px;
-			line-height: 24px;
+			font-size: 12px;
+			line-height: 16px;
 			color: #575759;
 		}
 	}
@@ -3352,12 +3357,13 @@
 		.content-wrap {
 			flex: 1;
 			max-width: inherit;
-			width: calc(100% - 26.4rem);
+			width: calc(100% - 30rem);
 			padding: 0 0 0 12px;
 			order: 2;
+			font-size: 14px;
 		}
 		.side-wrap {
-			width: 26.4rem;
+			width: 30rem;
 			margin: 0;
 			padding: 15px;
 			border-radius: 12px;
@@ -3378,7 +3384,7 @@
 			.btn {
 				width: 100%;
 				border-radius: 8px;
-				font-size: 12px;
+				font-size: 14px;
 				font-weight: 400;
 				&:not(:hover) {
 					border-color: #DDDFE3;
@@ -3464,9 +3470,16 @@
 		margin-bottom: 20px;
 		font-weight: bold;
 		line-height: (20/12);
+		font-size: 14px;
 		&.type-second {
 			font-weight: 400;
 			margin-bottom: 8px;
+			.row-value {
+				font-size: 14px;
+			}
+		}
+		.row-value {
+			font-size: 16px;
 		}
 	}
 	.frm-row, .frm-row-submit {
@@ -3535,7 +3548,7 @@
 				padding: 0 26px 0 8px;
 				z-index: 3;
 				border-radius: 4px;
-				font-size: 12px;
+				font-size: 14px;
 				font-weight: 400;
 				width: auto;
 				min-width: 0;
@@ -3643,10 +3656,10 @@
 			margin-bottom: 0;
 		}
 		.btn {
-			height: 40px;
+			height: 44px;
 			min-width: 200px;
 			border-radius: 8px;
-			font-size: 12px;
+			font-size: 14px;
 			color: #fff;
 			font-weight: 400;
 			width: auto;
@@ -3669,10 +3682,10 @@
 		}
 	}
 	.form-input {
-		height: 36px;
-		padding: 0 11px;
+		height: 44px;
+		padding: 0 16px;
 		border-radius: 8px;
-		font-size: 12px;
+		font-size: 14px;
 		color: #151516;
 		border-color: #DDDFE3;
 	}
