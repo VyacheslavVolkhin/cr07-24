@@ -3197,12 +3197,56 @@
 	}
 }
 .btn-action-ico {
+	&[data-tooltip-text] {
+		overflow: visible;
+		&.tooltip-active {
+			pointer-events: none;
+			&:after {
+				display: block;
+			}
+		}
+		&:after {
+			content: attr(data-tooltip-text);
+			position: absolute;
+			top: 50%;right: 100%;
+			left: auto;
+			bottom: auto;
+			height: 24px;
+			line-height: 24px;
+			padding: 0 9px;
+			border-radius: 12px;
+			background: #E8E8E8;
+			font-size: 12px;
+			font-weight: 400;
+			color: #575759;
+			white-space: nowrap;
+			display: none;
+			max-width: 300px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			margin-top: -12px;
+			max-height: inherit;
+			margin-left: 5px;
+			animation: fadein ease 0.2s;
+		}
+	}
 	&.ico-copy {
+		&:not(:hover) {
+			&:before {
+				filter: grayscale(100%) opacity(0.7);
+			}
+		}
 		&:before {
 			background-image: url(../img/icons/copy.svg);
 		}
 	}
 	&.ico-code {
+		&:not(:hover) {
+			&:before {
+				filter: grayscale(100%) opacity(0.7);
+			}
+		}
 		&:before {
 			background-image: url(../img/icons/code.svg);
 		}
@@ -3282,6 +3326,28 @@
 	font-size: 12px;
 	line-height: (16/12);
 	color: #151516;
+	.panel-status-wrap {
+		margin-bottom: 16px;
+		font-size: 12px;
+		line-height: 20px;
+		text-align: left;
+		display: flex;
+		align-items: center;
+		border: 1px solid #DDDFE3;
+		border-radius: 8px;
+		padding: 7px 11px;
+		.elm-ico {
+			flex-shrink: 0;
+			width: 24px;height: 24px;
+		}
+		.panel-status-title {
+			display: block;
+			padding-left: 8px;
+		}
+		b {
+			font-weight: 600;
+		}
+	}
 	.popup-lang-wrap {
 		position: relative;
 		.popup-content-block {
@@ -3450,7 +3516,7 @@
 		font-size: 16px;
 		line-height: 20px;
 		font-weight: bold;
-		margin: 0 0 16px 0;
+		margin: 0 0 12px 0;
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -3459,7 +3525,7 @@
 		font-size: 14px;
 		line-height: 20px;
 		color: #000;
-		margin-bottom: 12px;
+		margin-bottom: 8px;
 	}
 	.content-title {
 		font-size: 20px;
@@ -3518,13 +3584,19 @@
 		.elm-ico {
 			width: 60px;
 			height: 60px;
-			margin: 0 auto 8px auto;
+			margin: 0 auto 18px auto;
 		}
 		.field-subtitle {
 			text-align: center;
 			font-size: 1em;
 			line-height: inherit;
 			margin: 0 0 10px 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			b {
+				font-weight: bold;
+			}
 		}
 		.field-title {
 			text-align: center;
@@ -3569,6 +3641,9 @@
 		.field-code-content {
 			position: relative;
 			margin-bottom: 16px;
+			&:last-child {
+				margin-bottom: 0;
+			}
 			.elm-photo {
 				width: 128px;
 				margin: 0 auto;
@@ -3610,7 +3685,7 @@
 	.field-input-info {
 		color: #575759;
 		line-height: (20/12);
-		margin: 8px 0;
+		margin: 4px 0;
 		width: 100%;
 		&:first-child {
 			margin-top: 0;

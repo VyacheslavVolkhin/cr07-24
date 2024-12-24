@@ -3281,8 +3281,48 @@
 .wrap:has(.order-panel-box) {
   padding-top: 40px;
 }
+.btn-action-ico[data-tooltip-text] {
+  overflow: visible;
+}
+.btn-action-ico[data-tooltip-text].tooltip-active {
+  pointer-events: none;
+}
+.btn-action-ico[data-tooltip-text].tooltip-active:after {
+  display: block;
+}
+.btn-action-ico[data-tooltip-text]:after {
+  content: attr(data-tooltip-text);
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  left: auto;
+  bottom: auto;
+  height: 24px;
+  line-height: 24px;
+  padding: 0 9px;
+  border-radius: 12px;
+  background: #E8E8E8;
+  font-size: 12px;
+  font-weight: 400;
+  color: #575759;
+  display: none;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: -12px;
+  max-height: inherit;
+  margin-left: 5px;
+  animation: fadein ease 0.2s;
+}
+.btn-action-ico.ico-copy:not(:hover):before {
+  filter: grayscale(100%) opacity(0.7);
+}
 .btn-action-ico.ico-copy:before {
   background-image: url(../img/icons/copy.svg);
+}
+.btn-action-ico.ico-code:not(:hover):before {
+  filter: grayscale(100%) opacity(0.7);
 }
 .btn-action-ico.ico-code:before {
   background-image: url(../img/icons/code.svg);
@@ -3362,6 +3402,32 @@
   font-size: 12px;
   line-height: 1.33333333;
   color: #151516;
+}
+.order-panel-box .panel-status-wrap {
+  margin-bottom: 16px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: left;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  border: 1px solid #DDDFE3;
+  border-radius: 8px;
+  padding: 7px 11px;
+}
+.order-panel-box .panel-status-wrap .elm-ico {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+.order-panel-box .panel-status-wrap .panel-status-title {
+  display: block;
+  padding-left: 8px;
+}
+.order-panel-box .panel-status-wrap b {
+  font-weight: 600;
 }
 .order-panel-box .popup-lang-wrap {
   position: relative;
@@ -3551,7 +3617,7 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: bold;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
 }
 .order-panel-box .panel-title:last-child,
 .order-panel-box .content-title:last-child,
@@ -3562,7 +3628,7 @@
   font-size: 14px;
   line-height: 20px;
   color: #000;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .order-panel-box .content-title {
   font-size: 20px;
@@ -3613,13 +3679,19 @@
 .order-panel-box .field-input-message .elm-ico {
   width: 60px;
   height: 60px;
-  margin: 0 auto 8px auto;
+  margin: 0 auto 18px auto;
 }
 .order-panel-box .field-input-message .field-subtitle {
   text-align: center;
   font-size: 1em;
   line-height: inherit;
   margin: 0 0 10px 0;
+}
+.order-panel-box .field-input-message .field-subtitle:last-child {
+  margin-bottom: 0;
+}
+.order-panel-box .field-input-message .field-subtitle b {
+  font-weight: bold;
 }
 .order-panel-box .field-input-message .field-title {
   text-align: center;
@@ -3666,6 +3738,9 @@
   position: relative;
   margin-bottom: 16px;
 }
+.order-panel-box .field-input-code .field-code-content:last-child {
+  margin-bottom: 0;
+}
 .order-panel-box .field-input-code .field-code-content .elm-photo {
   width: 128px;
   margin: 0 auto;
@@ -3706,7 +3781,7 @@
 .order-panel-box .field-input-info {
   color: #575759;
   line-height: 1.66666667;
-  margin: 8px 0;
+  margin: 4px 0;
   width: 100%;
 }
 .order-panel-box .field-input-info:first-child {

@@ -22,6 +22,12 @@
 							<!--side-wrap-->
 							<div class="side-wrap">
 								<div class="side-content-wrap">
+									<div class="panel-status-wrap">
+										<div class="elm-ico">
+											<img src="./img/icons/menu.svg" alt="">
+										</div>
+										<div class="panel-status-title">Status: <b>Waiting for payment</b></div>
+									</div>
 									<div class="side-title">Order information</div>
 									<div class="text-inner-wrap">
 										<div class="elm-row">
@@ -114,7 +120,7 @@
 											<div class="field-input-content">
 												<input type="text" class="form-input form-input-large form-input-bold" value="0.00201 BTC">
 												<div class="field-buttons">
-													<a href="" class="btn-action-ico ico-copy button-field"></a>
+													<a href="" class="btn-action-ico ico-copy button-field" data-tooltip-text="Copied"></a>
 												</div>
 											</div>
 											<div class="field-input-info">Transfer exactly this amout. <a href="" class="link-att">Find out why?</a></div>
@@ -126,7 +132,7 @@
 											<div class="field-input-content">
 												<input type="text" class="form-input form-input-large" value="1EnojHx79AE4yF2PZYMN79WQHV4dUmJVVq">
 												<div class="field-buttons">
-													<a href="" class="btn-action-ico ico-copy button-field"></a>
+													<a href="" class="btn-action-ico ico-copy button-field" data-tooltip-text="Copied"></a>
 													<a href="" class="btn-action-ico ico-code button-field" onclick="this.classList.toggle('active');return false;"></a>
 												</div>
 											</div>
@@ -140,10 +146,13 @@
 													</div>
 													<div class="field-code-info">or&nbsp;scan <br>the&nbsp;QR code</div>
 												</div>
-												<div class="field-code-button">
-													<a href="" class="btn">I’ve payed</a>
-												</div>
 											</div>
+										</div>
+									</div>
+									<div class="frm-row-submit">
+										<div class="frm-field field-button">
+											<button type="submit" class="btn">I’ve payed</button>
+											<div class="field-input-info text-center">Press after transferring coins, or wait for automatic verification.</div>
 										</div>
 									</div>
 								</div>
